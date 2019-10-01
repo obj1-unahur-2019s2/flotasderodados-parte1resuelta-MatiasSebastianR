@@ -7,6 +7,7 @@ object verde {}
 object blanco {}
 object bordo {}
 object cremita {}
+object beige {}
 
 class ChevroletCorsa {
 	// al ponerlo como var property, se puede preguntar color()

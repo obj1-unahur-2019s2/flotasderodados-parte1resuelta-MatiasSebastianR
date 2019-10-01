@@ -1,0 +1,49 @@
+import dependencias.*
+import vehiculos.*
+
+test "deportes y cultura" {
+	
+	var deportes = new Dependencia(cantidadDeEmpleados=45)
+	var cultura = new Dependencia(cantidadDeEmpleados=31)
+	var cachito = new ChevroletCorsa(color = rojo)
+	deportes.agregarAFlota(cachito)
+	deportes.agregarAFlota(new ChevroletCorsa(color = azul))
+	deportes.agregarAFlota(new ChevroletCorsa(color = verde))
+	deportes.agregarAFlota(new RenaultKwid(tieneTanqueAdicional=true))
+	deportes.agregarAFlota(new AutoEspecial(capacidad=5, velocidadMaxima=160, peso=1200, color=beige))
+	cultura.agregarAFlota(cachito)
+	cultura.agregarAFlota(new RenaultKwid(tieneTanqueAdicional=true))
+	cultura.agregarAFlota(new RenaultKwid(tieneTanqueAdicional=true))
+	cultura.agregarAFlota(new RenaultKwid(tieneTanqueAdicional=false))
+	// cultura.agregarAFlota(trafic(interior=interiorPopular, motor=motorPulenta))
+	cultura.agregarAFlota(trafic)
+	trafic.interior(interiorPopular)
+	trafic.motor(motorPulenta)
+	assert.equals(6450, deportes.pesoTotalFlota())
+	assert.that(deportes.estaBienEquipada())
+	assert.equals(7, deportes.capacidadTotalEnColor(azul))
+	assert.equals(beige , deportes.colorDelRodadoMasRapido())
+	assert.that(deportes.esGrande())
+	assert.equals(25, deportes.capacidadFaltante())
+	
+}
+
+//Para cada dependencia, hacer asserts sobre: el peso total de la flota, si está o no bien equipada, la capacidad total en color azul, el color del rodado más rápido, si es grande o no, y la capacidad faltante.
+//
+//Va una ayudita: la capacidad faltante de deportes es de 25 personas (la flota puede llevar: 12 personas en los 3 Corsa, más 3 del Kwid y 5 del auto especial; total 20), mientras que la de cultura es de 5 personas (puede llevar en total 26: 6 de los Kwid con tanque adicional, más 4 de la Kwid sin tanque, más 4 de cachito, más 12 de la Trafic dado que tiene el interior popular).
+//
+//Megaimportante
+//
+//Hacer el diagrama de objetos correspondiente a este test.
+
+
+
+
+
+
+
+
+
+
+
+
