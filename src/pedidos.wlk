@@ -16,9 +16,9 @@ class Pedidos{
 		
 	}
 	
-	method acelerar() { tiempoMaximo -1 }
+	method acelerar() { tiempoMaximo -= 1 }
 	
-	method relajar() { tiempoMaximo +1 }
+	method relajar() { tiempoMaximo += 1 }
 	
 }
 
